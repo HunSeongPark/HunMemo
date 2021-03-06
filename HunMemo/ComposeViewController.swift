@@ -22,13 +22,13 @@ class ComposeViewController: UIViewController {
   @IBAction func save(_ sender: Any) {
     
     guard let memo = memoTextView.text,
-      memo.count > 0 else {
+          memo.count > 0 else {
       alert(message: "메모를 입력하세요")
       return
     }
     
-//    let newMemo = Memo(content: memo)
-//    Memo.dummyMemoList.append(newMemo)
+    //    let newMemo = Memo(content: memo)
+    //    Memo.dummyMemoList.append(newMemo)
     
     if let target = editTarget {
       target.content = memo
@@ -46,22 +46,22 @@ class ComposeViewController: UIViewController {
   
   
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      if let memo = editTarget {
-        navigationItem.title = "메모 편집"
-        memoTextView.text = memo.content
-        originalmemoContent = memo.content
-      } else {
-        navigationItem.title = "새 메모"
-        memoTextView.text = ""
-      }
-      
-      memoTextView.delegate = self
-
-        // Do any additional setup after loading the view.
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let memo = editTarget {
+      navigationItem.title = "메모 편집"
+      memoTextView.text = memo.content
+      originalmemoContent = memo.content
+    } else {
+      navigationItem.title = "새 메모"
+      memoTextView.text = ""
     }
+    
+    memoTextView.delegate = self
+    
+    // Do any additional setup after loading the view.
+  }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -76,16 +76,16 @@ class ComposeViewController: UIViewController {
   }
   
   /*
-    // MARK: - Navigation
-
+   // MARK: - Navigation
+   
    
    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destination.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
 }
 
 extension ComposeViewController: UITextViewDelegate {
