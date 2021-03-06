@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" title="HunMemo" id="l82-ZE-ibo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QSz-fZ-Tco">
                             <connections>
-                                <segue destination="N4t-hG-Kgu" kind="presentation" id="T4L-HM-bup"/>
+                                <segue destination="N4t-hG-Kgu" kind="presentation" modalPresentationStyle="fullScreen" id="T4L-HM-bup"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,11 +65,11 @@
             <objects>
                 <viewController id="nFw-OR-ph2" customClass="ComposeViewController" customModule="HunMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qxt-EB-A6N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0cU-0V-m23">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -92,8 +92,15 @@
                                 <action selector="close:" destination="nFw-OR-ph2" id="flq-WD-wZ4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="G61-ry-57J"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="G61-ry-57J">
+                            <connections>
+                                <action selector="save:" destination="nFw-OR-ph2" id="Qi3-tG-5Ew"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="memoTextView" destination="0cU-0V-m23" id="xVF-Ul-qgH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Px-Q1-qMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,7 +129,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vYp-hf-lDy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PXk-5t-R7T">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
