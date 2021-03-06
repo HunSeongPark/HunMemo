@@ -35,11 +35,15 @@ class DetailViewController: UIViewController {
     present(alert, animated: true, completion: nil)
   }
   
-  @IBAction func share(_ sender: Any) {
+  @IBAction func share(_ sender: UIBarButtonItem) {
     guard let memo = memo?.content else {return}
     
     let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
     present(vc, animated: true, completion: nil)
+    
+    if let pc = vc.popoverPresentationController {
+      pc.barButtonItem = sender
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
