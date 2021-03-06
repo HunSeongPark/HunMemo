@@ -10,7 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
   
   @IBOutlet weak var memoTableView: UITableView!
-  
+
   var memo: Memo?
   
   let formatter: DateFormatter = {
@@ -33,6 +33,13 @@ class DetailViewController: UIViewController {
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     alert.addAction(cancelAction)
     present(alert, animated: true, completion: nil)
+  }
+  
+  @IBAction func share(_ sender: Any) {
+    guard let memo = memo?.content else {return}
+    
+    let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
+    present(vc, animated: true, completion: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
