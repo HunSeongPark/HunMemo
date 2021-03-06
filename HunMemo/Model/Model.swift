@@ -9,11 +9,11 @@ import Foundation
 
 class Memo {
     var content: String
-    var insertData: Date
+    var insertDate: Date
     
     init(content: String) {
         self.content = content
-        self.insertData = Date()
+        self.insertDate = Date()
     }
     
     static var dummyMemoList = [
